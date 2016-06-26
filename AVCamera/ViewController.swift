@@ -21,7 +21,24 @@ class ViewController: UIViewController
     
     @IBAction func takePhoto(sender: UIButton)
     {
-        
+        if let videoConnection = stillImageOutput!.connectionWithMediaType(AVMediaTypeVideo)
+        {
+            videoConnection.videoOrientation = .Portrait
+            stillImageOutput?.captureStillImageAsynchronouslyFromConnection(videoConnection) { [unowned self] (sampleBuffer, error) in
+                
+                if sampleBuffer != nil
+                {
+                    let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(sampleBuffer)
+                    let dataProvider = CGDataProviderCreateWithCFData(imageData)
+                    let cgImageRef = CGImageCreateWithJPEGDataProvider(dataProvider, nil, true, .RenderingIntentDefault)
+                    
+                    let image = UIImage(CGImage: cgImageRef!, scale: 1.0, orientation: UIImageOrientation.Right)
+                    self.imageView.image = image
+                    
+                }
+                
+            }
+        }
     }
     
     override func viewDidLoad()
@@ -74,6 +91,8 @@ class ViewController: UIViewController
     
     override func viewDidAppear(animated: Bool)
     {
+        // your frame equals my bounds; inside
+        
         previewLayer!.frame = previewBox.bounds
     }
 }

@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hGG-Kd-ObE">
-                                <rect key="frame" x="175" y="20" width="250" height="250"/>
+                                <rect key="frame" x="175" y="28" width="250" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="250" id="60R-bx-J7V"/>
                                     <constraint firstAttribute="width" constant="250" id="Dul-tE-94N"/>
@@ -35,7 +35,7 @@
                                 </variation>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ldh-kg-8p5">
-                                <rect key="frame" x="0.0" y="314" width="600" height="164"/>
+                                <rect key="frame" x="0.0" y="322" width="600" height="164"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="128" id="5Oi-KT-djx"/>
@@ -70,7 +70,7 @@
                             <constraint firstItem="ldh-kg-8p5" firstAttribute="top" secondItem="hGG-Kd-ObE" secondAttribute="bottom" constant="44" id="Whn-Oy-gQJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ldh-kg-8p5" secondAttribute="trailing" constant="-20" id="Wy1-JG-RcX"/>
                             <constraint firstItem="hGG-Kd-ObE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bgg-gC-hz2"/>
-                            <constraint firstItem="hGG-Kd-ObE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="qZB-Vu-jJv"/>
+                            <constraint firstItem="hGG-Kd-ObE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="qZB-Vu-jJv"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PbS-Li-nCl" secondAttribute="bottom" constant="20" id="vCr-Ae-xG8"/>
                         </constraints>
                         <variation key="default">
