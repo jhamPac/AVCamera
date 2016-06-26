@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hGG-Kd-ObE">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hGG-Kd-ObE">
                                 <rect key="frame" x="175" y="20" width="250" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="250" id="60R-bx-J7V"/>
@@ -34,11 +35,23 @@
                                 </variation>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ldh-kg-8p5">
-                                <rect key="frame" x="175" y="312" width="250" height="128"/>
+                                <rect key="frame" x="0.0" y="314" width="600" height="164"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="128" id="5Oi-KT-djx"/>
+                                    <constraint firstAttribute="height" constant="128" id="M1Q-a0-dfA"/>
+                                    <constraint firstAttribute="width" constant="128" id="dv7-YI-PhC"/>
                                     <constraint firstAttribute="height" constant="128" id="fLk-ou-KG7"/>
+                                    <constraint firstAttribute="height" constant="164" id="j4M-D6-jwQ"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="5Oi-KT-djx"/>
+                                        <exclude reference="M1Q-a0-dfA"/>
+                                        <exclude reference="dv7-YI-PhC"/>
+                                        <exclude reference="fLk-ou-KG7"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PbS-Li-nCl">
                                 <rect key="frame" x="262" y="550" width="77" height="30"/>
@@ -51,17 +64,24 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ldh-kg-8p5" firstAttribute="width" secondItem="hGG-Kd-ObE" secondAttribute="width" id="BeK-TB-kut"/>
+                            <constraint firstItem="ldh-kg-8p5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="HHg-fy-zE8"/>
                             <constraint firstItem="ldh-kg-8p5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Hj1-hz-G37"/>
                             <constraint firstItem="PbS-Li-nCl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RUg-sL-LK3"/>
-                            <constraint firstItem="ldh-kg-8p5" firstAttribute="top" secondItem="hGG-Kd-ObE" secondAttribute="bottom" constant="42" id="Whn-Oy-gQJ"/>
+                            <constraint firstItem="ldh-kg-8p5" firstAttribute="top" secondItem="hGG-Kd-ObE" secondAttribute="bottom" constant="44" id="Whn-Oy-gQJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ldh-kg-8p5" secondAttribute="trailing" constant="-20" id="Wy1-JG-RcX"/>
                             <constraint firstItem="hGG-Kd-ObE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bgg-gC-hz2"/>
                             <constraint firstItem="hGG-Kd-ObE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="qZB-Vu-jJv"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PbS-Li-nCl" secondAttribute="bottom" constant="20" id="vCr-Ae-xG8"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="BeK-TB-kut"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
-                        <outlet property="customView" destination="ldh-kg-8p5" id="c7D-uQ-cKe"/>
                         <outlet property="imageView" destination="hGG-Kd-ObE" id="Bb4-tO-7Iq"/>
+                        <outlet property="previewBox" destination="ldh-kg-8p5" id="ZiZ-f6-qWq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
